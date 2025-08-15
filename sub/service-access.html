@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Access Control - Nuelex Energy Tech</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; }
+
+    :root {
+      --brand: #00C48A;
+      --brand-hover: #009E74;
+    }
+
+    /* NAVBAR */
+    header { background: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--brand); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: #333; font-weight: 500; }
+    nav a:hover { color: var(--brand); }
+
+    /* SHORT SLIDESHOW BANNER */
+    .about-hero { position: relative; height: 45vh; overflow: hidden; }
+    .about-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
+    .about-slide.active { opacity: 1; }
+    .about-hero .shade { position: absolute; inset: 0; background: linear-gradient(rgba(26, 209, 163, 0.6), rgba(0, 158, 116, 0.85)); }
+    .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; max-width: 800px; }
+    .banner-text h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .banner-text p { font-size: 1.2rem; opacity: 0.9; }
+
+    /* CONTENT */
+    .about-page { max-width: 1200px; margin: auto; padding: 3rem 1rem; }
+    .about-page h2 { font-size: 2rem; color: var(--brand); margin-bottom: 1rem; }
+    .about-page p { margin-bottom: 1rem; text-align: justify; }
+    .about-page ul { margin-left: 1.2rem; margin-bottom: 1.5rem; }
+    .about-page li { margin-bottom: 0.5rem; }
+    .about-page img { width: 100%; margin: 1.5rem 0; border-radius: 8px; }
+
+    /* FOOTER */
+    footer { background: #222; color: white; padding: 3rem 1rem; margin-top: 3rem; }
+    .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    footer h3 { margin-bottom: 1rem; color: var(--brand); }
+    footer p, footer a { font-size: 0.95rem; color: #ccc; }
+    footer a:hover { color: var(--brand); }
+    .footer-bottom { text-align: center; margin-top: 2rem; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .banner-text h1 { font-size: 2rem; }
+      .banner-text p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-container">
+    <h2 class="logo">Nuelex Energy Tech</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#industries">Industries</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- BANNER SLIDESHOW -->
+<section class="about-hero">
+  <div class="about-slide active" style="background-image:url('../images/gambling-3271510_1280.jpg')">
+    <div class="shade"></div>
+    <div class="banner-text">
+      <h1>Access Control</h1>
+      <p>Secure, smart, and seamless entry management</p>
+    </div>
+  </div>
+  <div class="about-slide" style="background-image:url('../images/wire-5474770_1920.jpg')">
+    <div class="shade"></div>
+    <div class="banner-text">
+      <h1>Access Control</h1>
+      <p>Biometric, RFID, and automation solutions</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="about-page">
+  <h2>Overview</h2>
+  <p>
+    Access control is more than just unlocking doors — it's about managing who can go where, when, and how. Our solutions combine advanced hardware with intelligent software to provide a secure, efficient, and user-friendly system for businesses, residential properties, and institutions.
+  </p>
+  <p>
+    From biometric fingerprint scanners to RFID card readers and automated gate systems, Nuelex Energy Tech ensures that only authorized individuals gain access, while keeping a complete audit trail of all movements. This protects your assets, safeguards people, and maintains privacy without compromising convenience.
+  </p>
+  <img src="../images/biometric-scanner-1006671_1920.jpg" alt="Biometric fingerprint scanner">
+  <p>
+    We design and install access control systems tailored to your needs — whether for a single office, a multi-building facility, or an entire campus. With integration options for CCTV, alarms, and time attendance, our systems form the backbone of modern security infrastructure.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Biometric authentication</strong> – Fingerprint, facial recognition, or iris scanning for unmatched security.</li>
+    <li><strong>RFID card and key fob access</strong> – Convenient, cost-effective, and easy to manage.</li>
+    <li><strong>Audit trails</strong> – Record every entry and exit with time stamps for compliance and monitoring.</li>
+    <li><strong>Integration ready</strong> – Connect with CCTV, alarms, and building management systems.</li>
+    <li><strong>Remote management</strong> – Control access from anywhere via web or mobile apps.</li>
+  </ul>
+  <img src="../images/zutrittskontrolle-4312260_1920.jpg" alt="RFID card reader">
+
+  <h2>Applications</h2>
+  <p>Our access control systems are suited for:</p>
+  <ul>
+    <li><strong>Corporate Offices</strong> – Protect sensitive areas and monitor employee attendance.</li>
+    <li><strong>Residential Estates</strong> – Secure gated communities and apartment buildings.</li>
+    <li><strong>Educational Institutions</strong> – Control entry to labs, libraries, and dormitories.</li>
+    <li><strong>Government Facilities</strong> – Safeguard classified areas and maintain strict access logs.</li>
+  </ul>
+  <img src="../images/access-card-4575613_1920.jpg" alt="Office door access system">
+  <p>
+    With Nuelex Energy Tech Access Control, you create a safe, organized, and accountable environment — without slowing down daily operations.
+  </p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div>
+      <h3>About NUELEX</h3>
+      <p>NUELEX delivers AI-powered solutions and advanced security systems to help businesses stay secure, efficient, and competitive.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="../index.html#services">Services</a></p>
+      <p><a href="../index.html#industries">Industries</a></p>
+      <p><a href="../index.html#about">About</a></p>
+    </div>
+    <div>
+      <h3>Get in Touch</h3>
+      <p>Customer Care: <a href="https://wa.me/254745255122" target="_blank">+254 745 255 122</a></p>
+      <p>Technical Consultation: <a href="https://wa.me/254703437872" target="_blank">+254 703 437 872</a></p>
+      <p>Manager: <a href="https://wa.me/254112487552" target="_blank">+254 112 487 552</a></p>
+      <p>Email: <a href="mailto:atomlab2017@gmail.com">atomlab2017@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      Designed by 
+      <a href="https://wa.me/254792651988" target="_blank">
+        PIXORA
+      </a>
+    </p>
+  </div>
+</footer>
+
+
+<!-- SCRIPT -->
+<script>
+  const slides = document.querySelectorAll(".about-slide");
+  let index = 0;
+  setInterval(() => {
+    slides.forEach(s => s.classList.remove("active"));
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000);
+</script>
+
+</body>
+</html>

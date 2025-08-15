@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Nuelex Energy Tech</title>
+  <style>
+    /* RESET & BASICS */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; }
+
+    /* THEME COLORS */
+    :root {
+      --brand: #00C48A;
+      --brand-hover: #009E74;
+    }
+
+    /* NAVBAR */
+    header { background: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--brand); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: #333; font-weight: 500; }
+    nav a:hover { color: var(--brand); }
+
+    /* SHORT SLIDESHOW BANNER */
+    .about-hero { position: relative; height: 45vh; overflow: hidden; }
+    .about-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
+    .about-slide.active { opacity: 1; }
+    .about-hero .shade { position: absolute; inset: 0; background: linear-gradient(rgba(26, 209, 163, 0.6), rgba(0, 158, 116, 0.85)); }
+    .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; max-width: 800px; }
+    .banner-text h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .banner-text p { font-size: 1.2rem; opacity: 0.9; }
+
+    /* CONTENT */
+    .about-page { max-width: 1200px; margin: auto; padding: 3rem 1rem; }
+    .about-page h2 { font-size: 2rem; color: var(--brand); margin-bottom: 1rem; }
+    .about-page p { margin-bottom: 1rem; text-align: justify; }
+    .about-highlight { background: #f9f9f9; padding: 1.5rem; margin-top: 2rem; border-left: 4px solid var(--brand); }
+
+    /* FOOTER */
+    footer { background: #222; color: white; padding: 3rem 1rem; margin-top: 3rem; }
+    .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    footer h3 { margin-bottom: 1rem; color: var(--brand); }
+    footer p, footer a { font-size: 0.95rem; color: #ccc; }
+    footer a:hover { color: var(--brand); }
+    .footer-bottom { text-align: center; margin-top: 2rem; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .banner-text h1 { font-size: 2rem; }
+      .banner-text p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="nav-container">
+    <h2 class="logo">Nuelex Energy Tech</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#industries">Industries</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- SHORT SLIDESHOW BANNER -->
+<section class="about-hero">
+  <div class="about-slide active" style="background-image:url('../images/bell-1631571_1920.jpg')">
+    <div class="shade"></div>
+    <div class="banner-text">
+      <h1>About Nuelex Energy Tech</h1>
+      <p>Innovating Africa’s future through AI and smart technology</p>
+    </div>
+  </div>
+  <div class="about-slide" style="background-image:url('../images/cctv-2846083_1920.jpg')">
+    <div class="shade"></div>
+    <div class="banner-text">
+      <h1>About Nuelex Energy Tech</h1>
+      <p>Where ideas become real-world solutions</p>
+    </div>
+  </div>
+  <div class="about-slide" style="background-image:url('../images/drone-8499903_1920.jpg')">
+    <div class="shade"></div>
+    <div class="banner-text">
+      <h1>About Nuelex Energy Tech</h1>
+      <p>Empowering businesses in the digital age</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="about-page">
+  <h2>Who We Are</h2>
+  <p>
+    Nuelex Energy Tech is a Kenyan technology enterprise dedicated to helping organizations harness the power of Artificial Intelligence, automation, and modern security systems. We believe in transforming how businesses operate — making them more efficient, secure, and future-ready.
+  </p>
+  <p>
+    Our journey began with a vision to bridge the gap between innovation and everyday operations. Today, we serve clients across multiple industries, from education and healthcare to manufacturing and government institutions, delivering solutions that not only work but grow with them.
+  </p>
+
+  <div class="about-highlight">
+    <p>
+      We don’t just install systems — we design experiences. Every solution we deliver is tailored to solve real challenges while leaving room for scalability and integration with emerging technologies.
+    </p>
+  </div>
+
+  <h2>What Makes Us Different</h2>
+  <p>
+    While many providers focus solely on selling products, our focus is on creating long-term value. This means taking the time to understand your needs, building solutions that adapt over time, and supporting you with training and updates long after the installation is done.
+  </p>
+  <p>
+    We merge global technologies with a deep understanding of the African market. This unique blend ensures our clients get the best of both worlds — cutting-edge tools designed for the realities of their environment.
+  </p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div>
+      <h3>About NUELEX</h3>
+      <p>NUELEX delivers AI-powered solutions and advanced security systems to help businesses stay secure, efficient, and competitive.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="../index.html#services">Services</a></p>
+      <p><a href="../index.html#industries">Industries</a></p>
+      <p><a href="../index.html#about">About</a></p>
+    </div>
+    <div>
+      <h3>Get in Touch</h3>
+      <p>Customer Care: <a href="https://wa.me/254745255122" target="_blank">+254 745 255 122</a></p>
+      <p>Technical Consultation: <a href="https://wa.me/254703437872" target="_blank">+254 703 437 872</a></p>
+      <p>Manager: <a href="https://wa.me/254112487552" target="_blank">+254 112 487 552</a></p>
+      <p>Email: <a href="mailto:atomlab2017@gmail.com">atomlab2017@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      Designed by 
+      <a href="https://wa.me/254792651988" target="_blank">
+        PIXORA
+      </a>
+    </p>
+  </div>
+</footer>
+
+
+<!-- SCRIPT -->
+<script>
+  const aboutSlides = document.querySelectorAll(".about-slide");
+  let aboutIndex = 0;
+  function showAboutSlide(index) {
+    aboutSlides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) slide.classList.add("active");
+    });
+  }
+  function nextAboutSlide() {
+    aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+    showAboutSlide(aboutIndex);
+  }
+  if (aboutSlides.length) {
+    setInterval(nextAboutSlide, 5000);
+  }
+</script>
+
+</body>
+</html>

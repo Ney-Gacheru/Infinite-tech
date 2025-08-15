@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electrical Power - Nuelex Energy Tech</title>
+  <style>
+    /* RESET & BASICS */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; }
+
+    :root {
+      --brand: #00C48A;
+      --brand-hover: #009E74;
+    }
+
+    /* NAVBAR */
+    header { background: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--brand); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: #333; font-weight: 500; }
+    nav a:hover { color: var(--brand); }
+
+    /* SHORT SLIDESHOW BANNER */
+    .about-hero { position: relative; height: 45vh; overflow: hidden; }
+    .about-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
+    .about-slide.active { opacity: 1; }
+    .about-hero .shade { position: absolute; inset: 0; background: linear-gradient(rgba(26, 209, 163, 0.6), rgba(0, 158, 116, 0.85)); }
+    .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; max-width: 800px; }
+    .banner-text h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .banner-text p { font-size: 1.2rem; opacity: 0.9; }
+
+    /* CONTENT */
+    .about-page { max-width: 1200px; margin: auto; padding: 3rem 1rem; }
+    .about-page h2 { font-size: 2rem; color: var(--brand); margin-bottom: 1rem; }
+    .about-page p { margin-bottom: 1rem; text-align: justify; }
+    .about-page ul { margin-left: 1.2rem; margin-bottom: 1.5rem; }
+    .about-page li { margin-bottom: 0.5rem; }
+    .about-page img { width: 100%; margin: 1.5rem 0; border-radius: 8px; }
+
+    /* FOOTER */
+    footer { background: #222; color: white; padding: 3rem 1rem; margin-top: 3rem; }
+    .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    footer h3 { margin-bottom: 1rem; color: var(--brand); }
+    footer p, footer a { font-size: 0.95rem; color: #ccc; }
+    footer a:hover { color: var(--brand); }
+    .footer-bottom { text-align: center; margin-top: 2rem; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .banner-text h1 { font-size: 2rem; }
+      .banner-text p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-container">
+    <h2 class="logo">Nuelex Energy Tech</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#industries">Industries</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- BANNER SLIDESHOW -->
+<section class="about-hero">
+  <div class="about-slide active" style="background-image:url('../images/technology-7772914_1920.jpg')">
+    <div class="shade"></div>
+    <div class="banner-text">
+      <h1>Electrical Power</h1>
+      <p>Reliable energy solutions for every need</p>
+    </div>
+  </div>
+  <div class="about-slide" style="background-image:url('../images/computer-4795762_1920.jpg')">
+    <div class="shade"></div>
+    <div class="banner-text">
+      <h1>Electrical Power</h1>
+      <p>From solar to wind, we've got you covered</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="about-page">
+  <h2>Overview</h2>
+  <p>
+    At Nuelex Energy Tech, we understand that access to reliable and sustainable power is critical for modern living and business operations. Our Electrical Power solutions cover solar, wind, and main grid installations, providing dependable energy tailored to your specific requirements.
+  </p>
+  <p>
+    Whether you're powering a small home, a bustling office, or a large industrial plant, we deliver systems that maximize efficiency, reduce operational costs, and support environmental sustainability.
+  </p>
+  <img src="../images/hero-1.jpg" alt="Solar power system">
+  <p>
+    We handle everything from initial assessment and design to installation, maintenance, and expansion — ensuring your power system grows with you.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Solar Power Solutions</strong> – Harness the sun's energy with high-efficiency panels and smart inverters.</li>
+    <li><strong>Wind Power Installations</strong> – Generate clean energy with modern turbine technology.</li>
+    <li><strong>Backup Generators</strong> – Ensure uninterrupted power supply during outages.</li>
+    <li><strong>Main Power Integration</strong> – Seamlessly connect to the grid with safe and compliant systems.</li>
+    <li><strong>Energy Storage</strong> – Store excess energy for use during peak demand or at night.</li>
+  </ul>
+  <img src="../images/electricity-4666566_1920.jpg" alt="Electric power generator">
+
+  <h2>Applications</h2>
+  <p>Our Electrical Power solutions are perfect for:</p>
+  <ul>
+    <li><strong>Residential Homes</strong> – Reduce energy bills and enjoy reliable electricity year-round.</li>
+    <li><strong>Commercial Buildings</strong> – Keep operations running smoothly with stable, sustainable power.</li>
+    <li><strong>Industrial Facilities</strong> – Power heavy machinery and maintain production schedules without interruption.</li>
+    <li><strong>Remote Areas</strong> – Bring electricity to locations without access to the main grid.</li>
+  </ul>
+  <img src="../images/pinwheels-6535595_1920.jpg" alt="Wind turbine farm">
+  <p>
+    With Nuelex Energy Tech Electrical Power solutions, you’re investing in reliability, sustainability, and energy independence.
+  </p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div>
+      <h3>About NUELEX</h3>
+      <p>NUELEX delivers AI-powered solutions and advanced security systems to help businesses stay secure, efficient, and competitive.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="../index.html#services">Services</a></p>
+      <p><a href="../index.html#industries">Industries</a></p>
+      <p><a href="../index.html#about">About</a></p>
+    </div>
+    <div>
+      <h3>Get in Touch</h3>
+      <p>Customer Care: <a href="https://wa.me/254745255122" target="_blank">+254 745 255 122</a></p>
+      <p>Technical Consultation: <a href="https://wa.me/254703437872" target="_blank">+254 703 437 872</a></p>
+      <p>Manager: <a href="https://wa.me/254112487552" target="_blank">+254 112 487 552</a></p>
+      <p>Email: <a href="mailto:atomlab2017@gmail.com">atomlab2017@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      Designed by 
+      <a href="https://wa.me/254792651988" target="_blank">
+        PIXORA
+      </a>
+    </p>
+  </div>
+</footer>
+
+
+<!-- SCRIPT -->
+<script>
+  const slides = document.querySelectorAll(".about-slide");
+  let index = 0;
+  setInterval(() => {
+    slides.forEach(s => s.classList.remove("active"));
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000);
+</script>
+
+</body>
+</html>
