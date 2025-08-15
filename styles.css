@@ -20,6 +20,75 @@ nav ul { list-style: none; display: flex; gap: 1.5rem; }
 nav a { color: #333; font-weight: 500; }
 nav a:hover { color: var(--brand); }
 
+header {
+  background: #fff; /* or transparent if hero background shows */
+  padding: 0.5rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo-container {
+   margin-left: -0.9rem; /* cancels left padding so logo hits edge */
+  height: 100%;
+}
+
+.logo-container a {
+  display: block;
+  height: 55px;
+}
+
+.logo-container img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ensure nav links stay on right */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+
+/* HERO BUTTON RESPONSIVENESS */
+.hero .btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background: #00AEEF;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero .btn:hover {
+  background: #0084A8;
+}
+
+@media (max-width: 768px) {
+  .hero .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+
 /* HERO */
 .hero { position: relative; height: 100vh; overflow: hidden; }
 .slide {
@@ -87,6 +156,7 @@ section h2 {
   gap: 2rem;
 }
 
+
 .about-text {
   flex: 1 1 500px;
 }
@@ -101,8 +171,16 @@ section h2 {
 
 .about-image {
   flex: 1 1 400px;
-  position: relative;
   text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* prevents overly huge images */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  object-fit: cover;
 }
 
 .about-image img {
@@ -111,18 +189,21 @@ section h2 {
   display: block;
 }
 
-/* Overlay similar to hero section */
-.about-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.4); /* same dark overlay as hero */
-  pointer-events: none;
+
+
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: justify;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
 }
+
 
 
 /* Learn More Button */
