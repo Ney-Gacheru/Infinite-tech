@@ -3,8 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuelex Energy Tech </title>
+  <title>Nuelex Energy Tech</title>
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Internal CSS for Collapsible Navbar -->
+  <style>
+    /* NAVBAR BASE */
+    /* Ensure hamburger stays on the far left */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: #fff;
+  position: relative;
+}
+
+/* Default: hamburger on the left, logo next to it */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-right: 15px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #000;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .logo-container {
+    display: flex; /* hide logo completely */
+    transform: scale(0.9); /* visually enlarge */
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto; /* push to the far right */
+    
+  }
+
+  .nav-container nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+
+  .nav-container nav ul.active {
+    display: flex;
+  }
+}
+
+  </style>
 </head>
 <body>
 
@@ -14,9 +75,17 @@
   <div class="nav-container">
     <div class="logo-container">
       <a href="index.html">
-        <img src="./images/logo.png" alt="Nuelex Energy Tech Logo">
+        <img src="./images/NEULEX Logo.png" alt="Nuelex Energy Tech Logo">
       </a>
     </div>
+
+    <!-- HAMBURGER MENU -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
       <ul>
         <li><a href="#hero">Home</a></li>
@@ -71,27 +140,39 @@
 </section>
 
 
- <!-- ABOUT -->
+<!-- ABOUT -->
 <section id="about" class="about">
-  <div class="container about-container">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p>
-        Nuelex Energy Tech is a Kenyan enterprise accelerating AI technology implementation in futuristic business enterprises. We aim to make it easier for businesses to embrace AI in daily operations, reducing costs while increasing efficiency.
-      </p>
-      <p>
-        <strong>Mission:</strong> To offer innovative solutions that transform ideas into reality at a fraction of the cost.
-      </p>
-      <p>
-        <strong>Vision:</strong> To be a leading AI-based problem-solving enterprise in an ever-evolving technological world.
-      </p>
+  <div class="about-container">
+    
+    <!-- Row 1: Heading -->
+    <h2 class="about-heading">About Us</h2>
+    
+    <!-- Row 2: Text + Logo -->
+    <div class="about-row">
+      <div class="about-text">
+        <p>
+          Nuelex Energy Tech is a Kenyan enterprise accelerating AI technology implementation in futuristic business enterprises. We aim to make it easier for businesses to embrace AI in daily operations, reducing costs while increasing efficiency.
+        </p>
+        <p>
+          <strong>Mission:</strong> To offer innovative solutions that transform ideas into reality at a fraction of the cost.
+        </p>
+        <p>
+          <strong>Vision:</strong> To be a leading AI-based problem-solving enterprise in an ever-evolving technological world.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="./images/NEULEX Logo.jpg" alt="About Nuelex Energy Tech">
+      </div>
+    </div>
+    
+    <!-- Row 3: Button -->
+    <div class="about-button">
       <a href="./sub/about.html" class="btn learn-more" target="_blank">Learn More</a>
     </div>
-    <div class="about-image">
-      <img src="./images/technology-7772914_1920.jpg" alt="About .Nuelex Energy Tech">
-    </div>
+
   </div>
 </section>
+
 
 
 <!-- SERVICES -->
@@ -101,28 +182,28 @@
     <div class="service-grid">
       
       <div class="card">
-        <img src="images/space-center-693251_1920.jpg" alt="Tracking Systems">
+        <img src="images/car tracking.png" alt="Tracking Systems">
         <h3>Tracking Systems</h3>
         <p>Advanced vehicle, kids & pet tracking solutions with geo-fencing and driver monitoring.</p>
         <a href="./sub/service-tracking.html" class="learn-more-link" target="_blank">Learn More &raquo;</a>
       </div>
 
       <div class="card">
-        <img src="images/work-7458261_1920.jpg" alt="Access Control">
+        <img src="images/Bio-metrics.png" alt="Access Control">
         <h3>Access Control</h3>
         <p>Biometric access, gate automation, and time attendance solutions for any facility.</p>
         <a href="./sub/service-access.html" class="learn-more-link" target="_blank">Learn More &raquo;</a>
       </div>
 
       <div class="card">
-        <img src="images/fence-1073604_1920.jpg" alt="Security Systems">
+        <img src="images/security systm.png" alt="Security Systems">
         <h3>Security Systems</h3>
         <p>CCTV, alarm systems, and electric fencing designed for maximum protection.</p>
         <a href="./sub/service-security.html" class="learn-more-link" target="_blank">Learn More &raquo;</a>
       </div>
 
       <div class="card">
-        <img src="images/pinwheels-6535595_1920.jpg" alt="Electrical Power">
+        <img src="images/electrical sola.png" alt="Electrical Power">
         <h3>Electrical Power</h3>
         <p>Solar, wind, and main power installations for homes, businesses, and industries.</p>
         <a href="./sub/service-electrical.html" class="learn-more-link" target="_blank">Learn More &raquo;</a>
@@ -202,5 +283,18 @@
 
 
   <script src="script.js"></script>
+
+  <!-- Internal JavaScript for Collapsible Navbar -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector("nav ul");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("open");
+      });
+    });
+  </script>
 </body>
 </html>
