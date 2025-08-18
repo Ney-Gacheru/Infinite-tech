@@ -16,26 +16,59 @@
       --brand-hover: #009E74;
     }
 
-    /* NAVBAR */
-    header { background: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
-    .logo { font-size: 1.5rem; font-weight: bold; color: var(--brand); }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a { color: #333; font-weight: 500; }
+    /* NAVBAR (uniform with main site) */
+    header { background: #fff; padding: 0.8rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { height: 50px; }
+    .logo img { height: 100%; width: auto; }
+
+    nav { display: flex; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
+    nav a { color: #333; font-weight: 500; transition: color 0.3s; }
     nav a:hover { color: var(--brand); }
+
+    /* HAMBURGER */
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .hamburger span { width: 25px; height: 3px; background: #333; border-radius: 5px; }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+      nav.active { display: flex; }
+      nav ul { flex-direction: column; gap: 1rem; padding: 1rem 0; }
+      .logo { display: none; } /* Hide logo on collapse */
+    }
 
     /* SHORT SLIDESHOW BANNER */
     .about-hero { position: relative; height: 45vh; overflow: hidden; }
     .about-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
     .about-slide.active { opacity: 1; }
     .about-hero .shade { position: absolute; inset: 0; background: linear-gradient(rgba(26, 209, 163, 0.6), rgba(0, 158, 116, 0.85)); }
-    .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; max-width: 800px; }
-    .banner-text h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .banner-text p { font-size: 1.2rem; opacity: 0.9; }
+
+    /* HERO TEXT — FLUID & RESPONSIVE */
+    .banner-text {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      color: #fff; text-align: center; max-width: 800px; padding: 0 1rem;
+      text-wrap: balance; /* nicer wrapping on modern browsers */
+    }
+    .banner-text h1 {
+      /* Scales smoothly from phones to desktops */
+      font-size: clamp(1.6rem, 4.2vw + 0.2rem, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.2px;
+    }
+    .banner-text p {
+      font-size: clamp(0.95rem, 1.1vw + 0.35rem, 1.15rem);
+      line-height: 1.5;
+      max-width: min(90vw, 800px);
+      margin: 0 auto;
+      opacity: 0.95;
+    }
 
     /* CONTENT */
     .about-page { max-width: 1200px; margin: auto; padding: 3rem 1rem; }
-    .about-page h2 { font-size: 2rem; color: var(--brand); margin-bottom: 1rem; }
+    .about-page h2 { font-size: 2rem; color: var(--brand); margin-bottom: 1rem; text-align: center; }
     .about-page p { margin-bottom: 1rem; text-align: justify; }
     .about-highlight { background: #f9f9f9; padding: 1.5rem; margin-top: 2rem; border-left: 4px solid var(--brand); }
 
@@ -46,12 +79,6 @@
     footer p, footer a { font-size: 0.95rem; color: #ccc; }
     footer a:hover { color: var(--brand); }
     .footer-bottom { text-align: center; margin-top: 2rem; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .banner-text h1 { font-size: 2rem; }
-      .banner-text p { font-size: 1rem; }
-    }
   </style>
 </head>
 <body>
@@ -59,8 +86,15 @@
 <!-- NAV -->
 <header>
   <div class="nav-container">
-    <h2 class="logo">Nuelex Energy Tech</h2>
-    <nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="logo">
+      <img src="../images/NEULEX Logo.jpg" alt="Nuelex Energy Tech">
+    </div>
+    <nav id="nav-menu">
       <ul>
         <li><a href="../index.html#hero">Home</a></li>
         <li><a href="../index.html#services">Services</a></li>
@@ -152,9 +186,9 @@
   </div>
 </footer>
 
-
 <!-- SCRIPT -->
 <script>
+  // HERO SLIDES
   const aboutSlides = document.querySelectorAll(".about-slide");
   let aboutIndex = 0;
   function showAboutSlide(index) {
@@ -170,6 +204,13 @@
   if (aboutSlides.length) {
     setInterval(nextAboutSlide, 5000);
   }
+
+  // NAV MENU TOGGLE
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
 </script>
 
 </body>

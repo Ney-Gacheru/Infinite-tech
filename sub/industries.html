@@ -14,21 +14,43 @@
       --brand-hover: #009E74;
     }
 
-    header { background: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
-    .logo { font-size: 1.5rem; font-weight: bold; color: var(--brand); }
+    /* NAVBAR */
+    header { background: #fff; padding: 0.8rem 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.6rem; font-weight: bold; color: var(--brand); }
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
     nav a { color: #333; font-weight: 500; }
     nav a:hover { color: var(--brand); }
 
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .hamburger span { width: 25px; height: 3px; background: #333; border-radius: 2px; }
+
+    @media (max-width: 768px) {
+      nav ul { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 60px; left: 0; right: 0; 
+        background: #fff; 
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      nav ul.show { display: flex; }
+      .hamburger { display: flex; }
+      .logo { font-size: 1.4rem; }
+    }
+
+    /* HERO */
     .about-hero { position: relative; height: 45vh; overflow: hidden; }
     .about-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
     .about-slide.active { opacity: 1; }
     .about-hero .shade { position: absolute; inset: 0; background: linear-gradient(rgba(26, 209, 163, 0.6), rgba(0, 158, 116, 0.85)); }
-    .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; max-width: 800px; }
-    .banner-text h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .banner-text p { font-size: 1.2rem; opacity: 0.9; }
+    .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; max-width: 800px; padding: 0 1rem; }
+    .banner-text h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 0.5rem; }
+    .banner-text p { font-size: clamp(1rem, 2.5vw, 1.2rem); opacity: 0.9; }
 
+    /* CONTENT */
     .about-page { max-width: 1200px; margin: auto; padding: 3rem 1rem; }
     .about-page h2 { font-size: 2rem; color: var(--brand); margin-bottom: 1rem; }
     .about-page p { margin-bottom: 1rem; text-align: justify; }
@@ -36,24 +58,23 @@
     .about-page li { margin-bottom: 0.5rem; }
     .about-page img { width: 100%; margin: 1.5rem 0; border-radius: 8px; }
 
+    /* FOOTER */
     footer { background: #222; color: white; padding: 3rem 1rem; margin-top: 3rem; }
     .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
     footer h3 { margin-bottom: 1rem; color: var(--brand); }
     footer p, footer a { font-size: 0.95rem; color: #ccc; }
     footer a:hover { color: var(--brand); }
     .footer-bottom { text-align: center; margin-top: 2rem; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
-
-    @media (max-width: 768px) {
-      .banner-text h1 { font-size: 2rem; }
-      .banner-text p { font-size: 1rem; }
-    }
   </style>
 </head>
 <body>
 
 <header>
   <div class="nav-container">
-    <h2 class="logo">Nuelex Energy Tech</h2>
+    <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </div>
+    <!-- <h2 class="logo">Nuelex Energy Tech</h2> -->
     <nav>
       <ul>
         <li><a href="../index.html#hero">Home</a></li>
@@ -145,8 +166,8 @@
   </div>
 </footer>
 
-
 <script>
+  // Hero slider
   const slides = document.querySelectorAll(".about-slide");
   let index = 0;
   setInterval(() => {
